@@ -7,7 +7,7 @@ public class TriggerManager : MonoBehaviour
     public static TriggerManager instance;
 
     private TriggerPassage triggerPassage;
-    public GameObject[] timeTrigger;
+    //public GameObject[] timeTrigger;
 
     public Transform firstTrigger;
 
@@ -16,6 +16,22 @@ public class TriggerManager : MonoBehaviour
         instance = this;
 
         //TriggerOrder();
+    }
+
+    //permet de tester la fonction in editeur
+    [ContextMenu(itemName: "Set Triggers")]
+
+    //automatise le linkage des checkpoints et reset sur le dernier checkpoint
+    public void Init()
+    {
+        firstTrigger = transform.GetChild(0);
+
+        for (int i = 0; i < transform.childCount - 1; i++)
+        {
+            transform.GetChild(i).GetComponent<Checkpoint>().nextCheckpoint = transform.GetChild(i + 1);
+        }
+
+        transform.GetChild(transform.childCount - 1).GetComponent<Checkpoint>().nextCheckpoint = transform.GetChild(0);
     }
 
     /*public void TriggerOrder()

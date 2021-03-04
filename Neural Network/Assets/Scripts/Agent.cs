@@ -25,6 +25,8 @@ public class Agent : MonoBehaviour, IComparable<Agent>
     public Transform nextCheckpoint;
     public float nextCheckpointDist;
 
+    public Transform nextTrigger;
+
     public Rigidbody rb;
 
     public float rayRange;
@@ -114,6 +116,13 @@ public class Agent : MonoBehaviour, IComparable<Agent>
         distanceTraveled += nextCheckpointDist;
         nextCheckpoint = checkpoint;
         nextCheckpointDist = (transform.position - nextCheckpoint.position).magnitude;
+    }
+
+    public void CurrentTriggerActivated(Transform trigger)
+    {
+        
+        nextTrigger = trigger;
+        
     }
 
     public void SetFirstColor()
