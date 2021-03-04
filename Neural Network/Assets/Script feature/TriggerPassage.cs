@@ -11,9 +11,9 @@ public class TriggerPassage : MonoBehaviour
     {
         if (other.transform.parent.GetComponent<Agent>())
         {
-            triggerManager.timeTrigger[0].SetActive(true);
+            //triggerManager.timeTrigger[0].SetActive(true);
 
-            for (int i = 0; i < triggerManager.timeTrigger.Length; i++)
+            for (int i = 0; i < triggerManager.timeTrigger.Length-1; i++)
             {
                 itWorks = true;
                 //triggerManager.timeTrigger[i + 1].SetActive(true);

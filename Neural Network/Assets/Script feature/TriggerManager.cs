@@ -14,16 +14,17 @@ public class TriggerManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        //TriggerOrder();
     }
 
-    public void TriggerOrder()
+    /*public void TriggerOrder()
     {
         timeTrigger[0].SetActive(true);
-        firstTrigger = transform.GetChild(0);
+        //firstTrigger = transform.GetChild(0);
 
-        for (int i = 0; i < timeTrigger.Length-1; i++)
+        for (int i = 0; i < timeTrigger.Length; i++)
         {
-            timeTrigger[i + 1].SetActive(true);
             timeTrigger[i].SetActive(false);
 
         }
@@ -32,5 +33,5 @@ public class TriggerManager : MonoBehaviour
         {
 
         }
-    }
+    }*/
 }
